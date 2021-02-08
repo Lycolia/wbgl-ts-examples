@@ -34,10 +34,10 @@ export const createVBO = (): VertexBufferObject => {
  * @param canvas
  */
 export const renderGL = (canvas: HTMLCanvasElement) => {
-  canvas = SetupClientRect(canvas);
-  let glCtx = GetGLContext(canvas);
+  canvas = setupClientRect(canvas);
+  let glCtx = getGLContext(canvas);
   if (!glCtx) return;
-  glCtx = SetupGLContext(glCtx);
+  glCtx = setupGLContext(glCtx);
   const program = createShaderProgram(glCtx);
   if (!program) return;
   generateVBO(glCtx, program);
@@ -48,7 +48,7 @@ export const renderGL = (canvas: HTMLCanvasElement) => {
  * クライアント領域を設定
  * @param canvas
  */
-export const SetupClientRect = (canvas: HTMLCanvasElement) => {
+export const setupClientRect = (canvas: HTMLCanvasElement) => {
   canvas.width = 1024;
   canvas.height = 768;
   return canvas;
@@ -58,7 +58,7 @@ export const SetupClientRect = (canvas: HTMLCanvasElement) => {
  * WebGLRenderingContextの取得
  * @param canvas
  */
-export const GetGLContext = (canvas: HTMLCanvasElement) => {
+export const getGLContext = (canvas: HTMLCanvasElement) => {
   return canvas.getContext('webgl');
 };
 
@@ -66,7 +66,7 @@ export const GetGLContext = (canvas: HTMLCanvasElement) => {
  * WebGLRenderingContextの初期化
  * @param glCtx
  */
-export const SetupGLContext = (glCtx: WebGLRenderingContext) => {
+export const setupGLContext = (glCtx: WebGLRenderingContext) => {
   // クリア色設定
   glCtx.clearColor(0.0, 0.0, 0.0, 1.0);
   // クリア深度設定
