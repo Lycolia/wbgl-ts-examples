@@ -29,6 +29,10 @@ export const createVBOObject = (): VertexBufferObject => {
   };
 };
 
+/**
+ * canvasへ描画
+ * @param canvas
+ */
 export const renderGL = (canvas: HTMLCanvasElement) => {
   canvas = SetupClientRect(canvas);
   let glCtx = GetGLContext(canvas);
