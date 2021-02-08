@@ -150,7 +150,7 @@ export const createFragmentShader = (glCtx: WebGLRenderingContext) => {
 /**
  * バッファを取得
  */
-function getBuffer(glCtx: WebGLRenderingContext, srcArr: number[]) {
+export const getBuffer = (glCtx: WebGLRenderingContext, srcArr: number[]) => {
   // バッファの作成
   const vboBuff = glCtx.createBuffer();
   // バッファのバインド
@@ -164,7 +164,7 @@ function getBuffer(glCtx: WebGLRenderingContext, srcArr: number[]) {
   // バッファのバインドを切る
   glCtx.bindBuffer(glCtx.ARRAY_BUFFER, null);
   return vboBuff;
-}
+};
 
 /**
  * VBOの生成
