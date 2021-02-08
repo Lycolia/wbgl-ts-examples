@@ -1,0 +1,68 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["react", "@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "error",
+    // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn",
+    // Enforce shorthand or standard form for React fragments
+    "react/jsx-fragments": ["warn", "syntax"],
+    // Prevent missing React when using JSX
+    "react/react-in-jsx-scope": "off",
+    // Validate whitespace in and around the JSX opening and closing brackets
+    "react/jsx-tag-spacing": [
+      "warn",
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    // Prevent extra closing tags for components without children
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    // Allow non-explicit return types on functions and class methods
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // Allow non-explicit return types on exported functions
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    // Disallow usage of the any type
+    "@typescript-eslint/no-explicit-any": 1,
+    // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
+    "@typescript-eslint/no-inferrable-types": [
+      "warn",
+      {
+        "ignoreParameters": true
+      }
+    ],
+    // Warn on declared but not used variable
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
+}
