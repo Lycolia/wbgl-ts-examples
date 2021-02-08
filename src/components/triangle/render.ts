@@ -20,7 +20,7 @@ export type VertexBufferObject = {
 /**
  * VBOオブジェクトの作成
  */
-export const createVBOObject = (): VertexBufferObject => {
+export const createVBO = (): VertexBufferObject => {
   return {
     location: 0,
     length: 0,
@@ -175,8 +175,8 @@ export const generateVBO = (
   glCtx: WebGLRenderingContext,
   program: WebGLProgram
 ) => {
-  const position = createVBOObject();
-  const color = createVBOObject();
+  const position = createVBO();
+  const color = createVBO();
   // shaderで定義したattaributeのポインタを取得する
   position.location = glCtx.getAttribLocation(program, 'position');
   color.location = glCtx.getAttribLocation(program, 'color');
