@@ -6,6 +6,7 @@
  *  minMatrix.js
  *  version 0.0.1
  *  Copyright (c) doxas
+ *  https://wgld.org/d/library/l001.html
  */
 
 /**
